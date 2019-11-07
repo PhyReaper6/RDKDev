@@ -1,0 +1,31 @@
+[
+  {"id":9,
+    "label": "Applications",
+    "data": [
+      {    
+        "title":"DStvNow", 
+        "path":"apps/DStvNow",
+        "id":1,
+        "cat": 9
+      },
+      {
+        "title":"Showmax",
+        "path":"apps/Showmax",
+        "id":2,
+        "cat": 9
+      },
+      {
+        "title":"Netflix",
+        "path":"apps/Netflix",
+        "id":3,
+        "cat": 9
+      },     
+      {
+        "title":"Joox",
+        "path":"apps/Joox",
+        "id":4,
+        "cat": 9
+      }     
+    ]
+  }
+]
