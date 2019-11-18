@@ -21,7 +21,11 @@ export default class Menu extends lng.Component{
             
         });
 
-        
+       // const LinearTV = this.stage.c({
+        //    type: MenuItem, item:{label:"Live TV", ref:"DStvNowLiveTV"}
+       // });
+
+        //this.childList.add(LinearTV);
 
         const movies = this.stage.c({
             type: MenuItem, item:{label:"Movies", ref:"DStvNowMovies"}
@@ -34,6 +38,12 @@ export default class Menu extends lng.Component{
         });
 
         this.childList.add(shows);
+        
+        const DStvNowSettings = this.stage.c({
+        type: MenuItem, item:{label:"Settings", ref:"DStvNowSettings"}
+        });
+
+        this.childList.add(DStvNowSettings);
     }
 
     get items(){

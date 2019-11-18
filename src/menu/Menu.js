@@ -12,6 +12,7 @@ export default class Menu extends lng.Component{
         this._index = 0;
         this.patch({
             Movies:{
+
                 type: MenuItem, item:{label:"Movies", ref:"Movies"}
             }
         });
@@ -21,6 +22,18 @@ export default class Menu extends lng.Component{
         });
 
         this.childList.add(shows);
+
+        const DStvNowSettings = this.stage.c({
+            type: MenuItem, item:{label:"DStvNowSettings", ref:"Settings"}
+        });
+
+        this.childList.add(DStvNowSettings);
+
+  //      const Linear = this.stage.c({
+   //         type: MenuItem, item:{label:"Live TV", ref:"Live"}
+   //     });
+
+       // this.childList.add(Linear);
     }
 
     get items(){
@@ -38,7 +51,7 @@ export default class Menu extends lng.Component{
     }
 
     _handleRight(){
-        if(this._index < this.items.length - 1){
+        if(this._index < this.items.length - 0){
             this.setIndex(this._index + 1)
         }
     }

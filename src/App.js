@@ -7,6 +7,7 @@ import Menu from "./menu/Menu.js";
 import AppBrowse from "./browse/AppBrowse.js";
 import StartupVideo from "./loader/StartupVideo.js";
 
+
 export default class App extends ux.App {
 
     static getFonts() {
@@ -89,7 +90,10 @@ export default class App extends ux.App {
             class StartupVideo extends this{
                 $enter(){
                     this.tag("StartupVideo").setSmooth("alpha",1);                    
-                    }  
+                    } 
+                    $exit(){
+                        this.tag("StartupVideo").setSmooth("alpha",0);
+                    } 
                 _getFocused(){
                     return this.tag("StartupVideo");
                 }

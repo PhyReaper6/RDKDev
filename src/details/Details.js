@@ -22,6 +22,8 @@ export default class Details extends lng.Component{
                 Poster:{
                     flexItem:{
                         marginRight: 150
+                       // marginLeft: 150
+                        
                     }
                 },
                 Metadata:{

@@ -22,7 +22,7 @@ export default class Slider extends lng.Component {
             },
             Items:{
                 children: data.map((item, idx)=>{
-                    return {type: SliderItem, x:idx*360, item:item, scale:0.9}
+                    return {type: SliderItem, x:idx*340, item:item, scale:0.9}
                 })
             }
         });
@@ -89,7 +89,7 @@ export default class Slider extends lng.Component {
                     this.items.forEach((item, idx)=>{
                         item.patch({
                             smooth:{
-                                x: [idx * 450, {duration:0.3, delay:idx*0.04}],
+                                x: [idx * 450, {duration:0.0, delay:idx*0.00}],
                                 scale: 1
                             }
                         });

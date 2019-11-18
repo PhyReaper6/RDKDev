@@ -5,6 +5,8 @@ import Details from "./details/Details.js";
 import Menu from "./menu/Menu.js";
 import DStvNowHomeBrowse from "./browse/DStvNowHomeBrowse.js"
 import App from "../App.js";
+import AppMainSliderItem from "../components/AppSliderItem.js";
+import Slider from "./components/Slider.js";
 
 export default class DStvNowApp extends ux.App {
 
@@ -28,7 +30,10 @@ export default class DStvNowApp extends ux.App {
                 type: Browse, x: 430, y: 150, alpha: 0
             },
             DStvNowHomeContent:{
-                type: DStvNowHomeBrowse, x: 430, y: 150, alpha: 0
+                type: DStvNowHomeBrowse, x: 360, y: 150, alpha: 0    //Controls the Banner Text On home screen
+            },
+            DStvNowSettings:{
+                type: Browse, x: 430, y: 150, alpha: 0
             },         
             Details:{
                 type: Details, signals:{detailsLoaded:"_loaded"}, alpha: 0.001
@@ -56,6 +61,7 @@ export default class DStvNowApp extends ux.App {
 
     _init(){
         this._setState("Menu");
+        
     }
 
     $api(){
@@ -64,8 +70,10 @@ export default class DStvNowApp extends ux.App {
 
     $onItemSelect({item}){
         //this._setState("Loading");
-        //this.tag("Details").asset = item;
-    }
+        //this.getMediaplayerSettings(App.getPath(`DStv_Promo_(The_Greatest_Show).mp4`) ) 
+        
+        }
+    
 
     _populate(data){
         data.forEach((props)=>{
@@ -79,6 +87,7 @@ export default class DStvNowApp extends ux.App {
 
     static _states(){
         return [
+            //What does this do????
            /* class Splash extends this{
                 $enter(){
                     this.tag("Splash").setSmooth("alpha",1);
@@ -116,6 +125,19 @@ export default class DStvNowApp extends ux.App {
                     this._api.getDStvNowAppData().then((data)=>{
                         this._populate(data);
                         this.tag("DStvNowHomeContent").setSmooth("alpha",1);
+                        /*if(this.tag= "DStvNowMovies") 
+                        {
+                            this.tag("DStvNowMovies").setSmooth("alpha",1);
+                        }
+                        else if(this.tag= "DStvNowHomeContent")
+                        {  
+                            this.tag("DStvNowHomeContent").setSmooth("alpha",1);
+                        }
+                        else if(this.tag= "DStvNowSeries")
+                        {
+                            this.tag("DStvNowSeries").setSmooth("alpha",1);
+                        }*/
+  
                     });
                    
                 }
@@ -136,8 +158,10 @@ export default class DStvNowApp extends ux.App {
                             this._setState(ref);
                         else
                         {
+                            //this.tag("DStvNowLiveTV").setSmooth("alpha",0);
                             this.tag("DStvNowMovies").setSmooth("alpha",0);
                             this.tag("DStvNowSeries").setSmooth("alpha",0);
+                            this.tag("DStvNowSettings").setSmooth("alpha",0);
                             this.tag("DStvNowHomeContent").setSmooth("alpha",0);
                             this.tag(ref).setSmooth("alpha",1);
                         }
@@ -182,6 +206,35 @@ export default class DStvNowApp extends ux.App {
                 }
                 _getFocused(){
                     return this.tag("DStvNowSeries");
+              
+                }
+            },
+            /*class DStvNowLiveTV extends this{
+                $enter(){
+                    this.tag("DStvNowLiveTV").setSmooth("alpha",1);
+                    this.tag("DStvNowHomeContent").setSmooth("alpha",0);
+                }
+                $exit({newState}){
+                    this.tag("DStvNowLiveTV").setSmooth("alpha",newState==="Menu"?1:0);
+                    this.tag("DStvNowLiveTV").setSmooth("alpha",0);
+                    
+                }
+                _getFocused(){
+                    return this.tag("DStvNowLiveTV");
+                }
+            },*/
+            class DStvNowSettings extends this{
+                $enter(){
+                    this.tag("DStvNowSettings").setSmooth("alpha",1);
+                    this.tag("DStvNowHomeContent").setSmooth("alpha",0);
+                }
+                $exit({newState}){
+                    this.tag("DStvNowSettings").setSmooth("alpha",newState==="Menu"?1:0);
+                    this.tag("DStvNowSettings").setSmooth("alpha",0);
+                    
+                }
+                _getFocused(){
+                    return this.tag("DStvNowSettings");
                 }
             },
             class Details extends this {

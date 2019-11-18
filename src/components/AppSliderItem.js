@@ -36,6 +36,7 @@ export default class AppMainSliderItem extends lng.Component{
             }
             else{        
                 this._setState("StopVideo");
+                
             
         }
         this.setSmooth("scale",1.3);
@@ -67,7 +68,8 @@ export default class AppMainSliderItem extends lng.Component{
                 },   
                 class StopVideo extends this{
                     $enter(){
-                        this.tag("Player").setSmooth("alpha",0);           
+                        this.tag("Player").setSmooth("alpha",0);
+                        this._updateDetails.start();           
                         }  
                 }    
         ]

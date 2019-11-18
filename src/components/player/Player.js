@@ -34,6 +34,7 @@ export default class Player extends lng.Component {
 
     getMediaplayerSettings() {
         return {
+            
             stream: { src: App.getPath(`DStv_Promo_(The_Greatest_Show).mp4`) }
         }
     }

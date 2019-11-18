@@ -124,7 +124,7 @@ export default class DStvNowHomeSlider extends lng.Component {
                                 smooth:{
                                     x:[0, {duration: 1}],
                                     text:{
-                                        w:670,
+                                        w:450,
                                         fontSize:38,
                                         textStyle:"bold",
                                         text:this.active.item.title
@@ -136,8 +136,9 @@ export default class DStvNowHomeSlider extends lng.Component {
                             smooth:{
                                 x:[0, {duration: 1}], 
                                 text:{
-                                    w:670,
-                                    fontSize:30,
+                                    w:450,
+                                    fontSize:23,
+                                    LineHeight:1.5,
                                     text:this.active.item.year
                                     },
                                     alpha: [1, {duration:1}]
@@ -147,9 +148,10 @@ export default class DStvNowHomeSlider extends lng.Component {
                             smooth:{
                                 x:[0, {duration: 1}], 
                                 text:{
-                                    w:670,
-                                    fontSize:30,
-                                    maxLines:6,
+                                    w:450,
+                                    fontSize:23,
+                                    maxLines:14,
+                                    LineHeight:1.5,
                                     text:this.active.item.info
                                     },
                                     alpha: [1, {duration:1}]                            

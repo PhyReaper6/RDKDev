@@ -3,8 +3,11 @@ import DStvNowApp from "../DStvNowApp.js";
 export default class MainSliderItem extends lng.Component{
     static _template(){
         return {
-            rect: true, color: 0xffffffff, w: 390, h: 556, scale:1,
-            transitions:{scale:{duration:0.3, delay:0.05}}
+            rect: true, color: 0xffffffff, w: 390, h: 556, scale:0.25
+            
+            ,
+            
+            transitions:{scale:{duration:0.3, delay:0.00}}
         }
     }
 
